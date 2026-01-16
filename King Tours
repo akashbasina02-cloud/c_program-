@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main(){
+    int M,N;
+    scanf("%d %d",&N,&M);
+    int d;
+    d=N*5+M*7;
+    printf("%d",d);
+    return 0;
+    
+}
