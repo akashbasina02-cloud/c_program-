@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+    double a,b,c,s;
+    scanf("%lf%lf%lf%lf",&a,&b,&c,&s);
+    s=(a+b+c)/2;
+    double h;
+    h=sqrt(s*(s-a)*(s-b)*(s-c));
+    printf("%.4lf",h);
+    return 0;
+}
