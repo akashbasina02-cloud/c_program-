@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main(){
+    int a;
+    scanf("%d",&a);
+    float F=(a*9.0/5.0)+32;
+    
+    printf("%.2f",F);
+    return 0;
+}
