@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main(){
+int z,x,c,v;
+scanf("%d %d %d %d",&z,&x,&c,&v);
+if(z>=10 && x>=10 && c>=10 && v>=10){
+printf("YES");
+}
+else{
+    printf("NO");
+}
+    return 0;
+}
