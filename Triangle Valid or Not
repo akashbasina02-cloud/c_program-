@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+    int a,s,d;
+    scanf("%d %d %d",&a,&s,&d);
+    if( a+s>d && s+d>a && a+d>s){
+        printf("Valid triangle");
+    }
+    else{
+        printf("Invalid triangle");
+    }
+    return 0;
+    
+}
