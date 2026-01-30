@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int n, first, last;
+
+    scanf("%d", &n);
+
+    last = n % 10;   // Get last digit
+
+    while (n >= 10) {
+        n = n / 10;  // Remove last digit
+    }
+
+    first = n;       // Remaining digit is first digit
+
+    printf("%d", first + last);
+
+    return 0;
+}
