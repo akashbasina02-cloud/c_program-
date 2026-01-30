@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;   // declare variables
+
+    scanf("%d", &n);   // read input number
+
+    while (n > 0) {    // loop runs till number becomes 0
+        count++;       // increase digit count
+        n = n / 10;    // remove last digit
+    }
+
+    printf("%d", count);  // print total digits
+
+    return 0;
+}
