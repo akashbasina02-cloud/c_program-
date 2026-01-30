@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    int N, A, B;   // declare variables
+
+    scanf("%d %d %d", &N, &A, &B);   // read N, A, B
+
+    // loop from A to B
+    for (int i = A; i <= B; i++) {
+        printf("%d x %d = %d\n", N, i, N * i);   // print multiplication
+    }
+
+    return 0;
+}
