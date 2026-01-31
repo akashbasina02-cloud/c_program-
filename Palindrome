@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+// Function to reverse the given number
+int reverseNumber(int n)
+{
+    int rev = 0, rem;
+
+    // Loop to reverse the number
+    while (n != 0)
+    {
+        rem = n % 10;        // Get last digit
+        rev = rev * 10 + rem; // Build reverse number
+        n = n / 10;          // Remove last digit
+    }
+
+    return rev;              // Return reversed number
+}
+
+int main()
+{
+    int n, reverse;
+
+    // Read input
+    scanf("%d", &n);
+
+    // Call user-defined function
+    reverse = reverseNumber(n);
+
+    // Check palindrome condition
+    if (n == reverse)
+        printf("Palindrome");
+    else
+        printf("Not Palindrome");
+
+    return 0;
+}
