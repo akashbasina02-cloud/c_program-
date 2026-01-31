@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    int m, n, max, lcm;
+
+    // Read two numbers
+    scanf("%d %d", &m, &n);
+
+    // Find the greater of two numbers
+    max = (m > n) ? m : n;
+
+    // Loop until LCM is found
+    while (1)
+    {
+        if (max % m == 0 && max % n == 0)
+        {
+            lcm = max;   // LCM found
+            break;
+        }
+        max++;
+    }
+
+    // Print LCM
+    printf("%d", lcm);
+
+    return 0;
+}
