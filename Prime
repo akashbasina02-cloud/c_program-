@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i, flag = 0;
+
+    // Read input number
+    scanf("%d", &n);
+
+    // Numbers less than or equal to 1 are not prime
+    if (n <= 1)
+    {
+        printf("Not Prime");
+        return 0;
+    }
+
+    // Check divisibility from 2 to n-1
+    for (i = 2; i < n; i++)
+    {
+        if (n % i == 0)
+        {
+            flag = 1;   // Not a prime number
+            break;
+        }
+    }
+
+    // Print result
+    if (flag == 0)
+        printf("Prime");
+    else
+        printf("Not Prime");
+
+    return 0;
+}
