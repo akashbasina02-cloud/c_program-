@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    double CP, SP;
+    double lossPercentage;
+
+    // Read Cost Price and Selling Price
+    scanf("%lf %lf", &CP, &SP);
+
+    // Calculate loss percentage
+    lossPercentage = ((CP - SP) / CP) * 100;
+
+    // Print loss percentage with 2 decimal places
+    printf("%.2lf", lossPercentage);
+
+    return 0;   // End of program
+}
