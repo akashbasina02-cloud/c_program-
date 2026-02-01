@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    int T, S, B;
+    int capacityKB;
+
+    // Read number of tracks, sectors, and blocks
+    scanf("%d %d %d", &T, &S, &B);
+
+    // Calculate disk capacity in KB
+    capacityKB = (2 * T * S * B * 512) / 1024;
+
+    // Print the capacity in KB
+    printf("%d KB", capacityKB);
+
+    return 0;   // End of program
+}
