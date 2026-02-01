@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    int X, Y;
+    int time;
+
+    // Read time taken by Tap A and Tap B
+    scanf("%d %d", &X, &Y);
+
+    // Calculate time taken when both taps work together
+    time = (X * Y) / (X + Y);
+
+    // Print the result
+    printf("%d", time);
+
+    return 0;   // End of program
+}
