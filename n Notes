@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    int N;
+    int notes500;
+
+    // Read number of Rs.2000 notes
+    scanf("%d", &N);
+
+    // Calculate number of Rs.500 notes
+    notes500 = N * 4;
+
+    // Print the result
+    printf("%d", notes500);
+
+    return 0;   // End of program
+}
