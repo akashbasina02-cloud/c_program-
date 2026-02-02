@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int M, N, count = 0;
+
+    // Read input
+    scanf("%d %d", &M, &N);
+
+    // Check numbers between M and N
+    for(int i = M + 1; i < N; i++) {
+        if(i % 6 == 0) {
+            count++;
+        }
+    }
+
+    // Print result
+    printf("%d", count);
+
+    return 0;
+}
