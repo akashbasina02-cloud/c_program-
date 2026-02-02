@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    
+    // Read input
+    scanf("%d", &N);
+
+    // Print first N multiples of 3
+    for(int i = 1; i <= N; i++) {
+        printf("%d ", i * 3);
+    }
+
+    return 0;
+}
