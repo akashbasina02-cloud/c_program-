@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int N, square, sum = 0;
+
+    // Read input
+    scanf("%d", &N);
+
+    // Square of the number
+    square = N * N;
+
+    // Find sum of digits of square using for loop
+    for (int temp = square; temp > 0; temp /= 10) {
+        sum += temp % 10;
+    }
+
+    // Check Neon Number condition
+    if (sum == N)
+        printf("Neon Number");
+    else
+        printf("Not Neon Number");
+
+    return 0;
+}
