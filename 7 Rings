@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int N, X;          // Number of items and cost per item
+    int total;         // Total bill amount
+
+    // Read input values
+    scanf("%d %d", &N, &X);
+
+    // Calculate total bill
+    total = N * X;
+
+    // Check if total is a valid 5-digit phone number
+    if (total >= 10000 && total <= 99999)
+        printf("YES");   // Valid phone number
+    else
+        printf("NO");    // Invalid phone number
+
+    return 0;
+}
