@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int a = 0, b = 1, c;
+
+    // Special case
+    if (n == 0 || n == 1) {
+        printf("True");
+        return 0;
+    }
+
+    while (b < n) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+
+    if (b == n)
+        printf("True");
+    else
+        printf("False");
+
+    return 0;
+}
