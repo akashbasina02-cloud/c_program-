@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);   // Read input N
+
+    // Loop from N down to 1
+    for (int i = n; i >= 1; i--) {
+
+        // Print number i, i times
+        for (int j = 1; j <= i; j++) {
+            printf("%d", i);
+        }
+
+        // Print stars (N - i) times
+        for (int k = 1; k <= n - i; k++) {
+            printf("*");
+        }
+
+        // Move to next line
+        printf("\n");
+    }
+
+    return 0;
+}
