@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        // leading spaces
+        for (int s = 0; s < n - i; s++) {
+            putchar(' ');
+        }
+        // stars with single spaces between, none after last
+        for (int j = 1; j <= i; j++) {
+            putchar('*');
+            if (j < i) putchar(' ');
+        }
+        putchar('\n');
+    }
+    return 0;
+}
