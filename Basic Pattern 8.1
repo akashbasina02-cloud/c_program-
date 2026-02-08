@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    
+    // Read input value
+    scanf("%d", &n);
+
+    // Find middle position
+    int mid = (n + 1) / 2;
+
+    // Loop from 1 to N
+    for (i = 1; i <= n; i++) {
+        
+        // If middle element, print only once
+        if (i == mid) {
+            printf("%d\n", i);
+        } 
+        // Otherwise print number twice
+        else {
+            printf("%d %d\n", i, i);
+        }
+    }
+
+    return 0;
+}
