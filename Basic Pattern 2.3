@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j;   // declare variables
+
+    scanf("%d", &n);   // read input N
+
+    // loop for rows
+    for (i = 1; i <= n; i++) {
+
+        // loop to print alphabets from A
+        for (j = 0; j < i; j++) {
+            printf("%c ", 'A' + j);   // print character
+        }
+
+        printf("\n");   // move to next line
+    }
+
+    return 0;   // end of program
+}
