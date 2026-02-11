@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int arr[100];
+    float sum = 0, avg;
+
+    // Read size
+    scanf("%d", &n);
+
+    // Read array elements
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        sum = sum + arr[i];   // Add while reading (better way)
+    }
+
+    // Calculate average
+    avg = sum / n;
+
+    // Print with 2 decimal places
+    printf("%.2f", avg);
+
+    return 0;
+}
