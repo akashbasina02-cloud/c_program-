@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int arr[100];
+    int sum = 0;
+
+    // Read size
+    scanf("%d", &n);
+
+    // Read elements
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Sum of even index elements
+    for(i = 0; i < n; i += 2) {
+        sum = sum + arr[i];
+    }
+
+    // Print result
+    printf("%d", sum);
+
+    return 0;
+}
