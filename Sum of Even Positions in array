@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+
+    int n, i;            // n = size of array, i = loop variable
+    int arr[100];        // array to store elements (max size 100)
+    int sum = 0;         // variable to store sum
+
+    scanf("%d", &n);     // read size of array
+
+    // reading array elements
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // adding elements at even indexes (0,2,4...)
+    for(i = 0; i < n; i++) {
+        if(i % 2 == 0) {     // check if index is even
+            sum += arr[i];   // add element to sum
+        }
+    }
+
+    printf("%d", sum);   // print final sum
+
+    return 0;            // end of program
+}
