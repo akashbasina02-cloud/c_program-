@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+int main() {
+    long long N, M;
+    
+    scanf("%lld %lld", &N, &M);   // Read N and M
+    
+    long long result = (M / 2) + 1;   // Minimum votes for strict majority
+    
+    printf("%lld", result);
+    
+    return 0;
+}
