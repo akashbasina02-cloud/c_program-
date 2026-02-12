@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main() {
+    int n, i, sum = 0;
+    
+    scanf("%d", &n);   // Read size of array
+    
+    int arr[n];        // Declare array
+    
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);   // Read array elements
+    }
+    
+    for(i = 0; i < n; i++) {
+        if(arr[i] % 2 == 0) {   // Check if number is even
+            sum += arr[i];      // Add to sum
+        }
+    }
+    
+    printf("%d", sum);   // Print result
+    
+    return 0;
+}
