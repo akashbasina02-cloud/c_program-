@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int arr[100];
+    int sum = 0;
+    int average;
+    int found = 0;
+
+    scanf("%d", &n);
+
+    // Read array elements
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];   // Calculate sum
+    }
+
+    average = sum / n;   // Integer average
+
+    // Check if average exists in array
+    for(i = 0; i < n; i++) {
+        if(arr[i] == average) {
+            found = 1;
+            break;
+        }
+    }
+
+    if(found)
+        printf("True");
+    else
+        printf("False");
+
+    return 0;
+}
