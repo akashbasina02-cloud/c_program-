@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int arr[100];
+    int strictlyOdd = 1;   // Assume true
+
+    scanf("%d", &n);
+
+    // Read array elements
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Check condition
+    for(i = 0; i < n; i++) {
+        if(arr[i] % 2 != 0) {     // If element is odd
+            if(i % 2 == 0) {      // But index is even
+                strictlyOdd = 0;  // Not strictly odd
+                break;
+            }
+        }
+    }
+
+    if(strictlyOdd)
+        printf("True");
+    else
+        printf("False");
+
+    return 0;
+}
