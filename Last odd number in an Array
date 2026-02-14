@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    
+    int n;   // Store size of array
+    scanf("%d", &n);   // Read size
+    
+    int arr[n];   // Declare array
+    
+    // Read array elements
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    // Traverse from last to first
+    for(int i = n - 1; i >= 0; i--) {
+        
+        // Check if element is odd
+        if(arr[i] % 2 != 0) {
+            
+            printf("%d", arr[i]);   // Print the odd number
+            break;                  // Stop after finding last odd
+        }
+    }
+    
+    return 0;   // End program
+}
