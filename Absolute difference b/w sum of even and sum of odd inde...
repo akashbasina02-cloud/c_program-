@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>   // for abs()
+
+int main() {
+    int n;
+    scanf("%d", &n);   // Read size of array
+
+    int arr[n];   // Declare array
+
+    // Read array elements
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int even_sum = 0;   // Sum of even index elements
+    int odd_sum = 0;    // Sum of odd index elements
+
+    // Calculate sums
+    for(int i = 0; i < n; i++) {
+        if(i % 2 == 0) {        // Even index
+            even_sum += arr[i];
+        } else {                // Odd index
+            odd_sum += arr[i];
+        }
+    }
+
+    // Print absolute difference
+    printf("%d", abs(even_sum - odd_sum));
+
+    return 0;   // End of program
+}
