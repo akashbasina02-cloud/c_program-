@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    
+    // Read size
+    scanf("%d", &n);
+    
+    int arr[n];
+    
+    // Read array elements
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    int strictlyEven = 1;   // Assume true
+    
+    // Check all elements
+    for(int i = 0; i < n; i++) {
+        
+        // If element is even
+        if(arr[i] % 2 == 0) {
+            
+            // If index is odd → condition fails
+            if(i % 2 != 0) {
+                strictlyEven = 0;
+                break;   // No need to check further
+            }
+        }
+    }
+    
+    if(strictlyEven)
+        printf("True");
+    else
+        printf("False");
+    
+    return 0;
+}
