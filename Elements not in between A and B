@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    
+    // Read size of array
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Read array elements
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int A, B;
+
+    // Read A and B values
+    scanf("%d %d", &A, &B);
+
+    int found = 0;  // Flag to check if any element is printed
+
+    for(int i = 0; i < n; i++) {
+        
+        // Check if element is NOT strictly between A and B
+        if(arr[i] <= A || arr[i] >= B) {
+            printf("%d ", arr[i]);
+            found = 1;  // At least one element found
+        }
+    }
+
+    // If no such elements exist
+    if(found == 0) {
+        printf("-1");
+    }
+
+    return 0;
+}
