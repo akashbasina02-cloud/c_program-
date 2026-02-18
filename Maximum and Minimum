@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    scanf("%d", &n);   // Read size of array
+
+    int arr[n];
+
+    // Read array elements
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int min = 100000;   // Initialize minimum
+    int max = -1;       // Initialize maximum
+    int found = 0;      // Flag to check if any element satisfies condition
+
+    // Check each element
+    for(i = 0; i < n; i++) {
+
+        int count = 0;   // To count frequency of arr[i]
+
+        // Count how many times arr[i] appears
+        for(j = 0; j < n; j++) {
+            if(arr[i] == arr[j]) {
+                count++;
+            }
+        }
+
+        // Check condition: element value == frequency
+        if(arr[i] == count) {
+            found = 1;   // Condition satisfied
+
+            // Update minimum
+            if(arr[i] < min) {
+                min = arr[i];
+            }
+
+            // Update maximum
+            if(arr[i] > max) {
+                max = arr[i];
+            }
+        }
+    }
+
+    // If at least one element satisfies condition
+    if(found) {
+        printf("%d %d", min, max);
+    }
+    else {
+        printf("-1");   // No element satisfies condition
+    }
+
+    return 0;
+}
