@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    scanf("%d", &n);   // Read array size
+
+    int arr[n];
+
+    // Read array elements
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int printed = 0;   // To check if any element is printed
+
+    for(i = 0; i < n; i++) {
+
+        int count = 0;
+
+        // Count frequency of arr[i]
+        for(j = 0; j < n; j++) {
+            if(arr[i] == arr[j]) {
+                count++;
+            }
+        }
+
+        // Check condition
+        if(arr[i] == count) {
+
+            // To avoid printing duplicates
+            int alreadyPrinted = 0;
+            for(j = 0; j < i; j++) {
+                if(arr[j] == arr[i]) {
+                    alreadyPrinted = 1;
+                    break;
+                }
+            }
+
+            if(!alreadyPrinted) {
+                printf("%d ", arr[i]);
+                printed = 1;
+            }
+        }
+    }
+
+    // If nothing printed
+    if(!printed) {
+        printf("-1");
+    }
+
+    return 0;
+}
