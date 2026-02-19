@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);   // Read size of array
+
+    int arr[n];
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);   // Read array elements
+    }
+
+    int A, B;
+    scanf("%d %d", &A, &B);   // Read A and B values
+
+    // If A is greater than B, swap them
+    if(A > B) {
+        int temp = A;
+        A = B;
+        B = temp;
+    }
+
+    int max = -1;   // Initialize max as -1
+
+    for(int i = 0; i < n; i++) {
+        // Check if element is NOT between A and B
+        if(arr[i] < A || arr[i] > B) {
+            
+            // Update maximum value
+            if(max == -1 || arr[i] > max) {
+                max = arr[i];
+            }
+        }
+    }
+
+    printf("%d", max);   // Print result
+
+    return 0;
+}
