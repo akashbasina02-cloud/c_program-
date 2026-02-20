@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+
+    // Read size of array
+    scanf("%d", &N);
+
+    int arr[N];
+    int even_sum = 0;   // Sum of even elements at even index
+    int odd_sum = 0;    // Sum of odd elements at odd index
+
+    // Read array elements
+    for(int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Check conditions
+    for(int i = 0; i < N; i++) {
+
+        // Even index and even element
+        if(i % 2 == 0 && arr[i] % 2 == 0) {
+            even_sum += arr[i];
+        }
+
+        // Odd index and odd element
+        if(i % 2 != 0 && arr[i] % 2 != 0) {
+            odd_sum += arr[i];
+        }
+    }
+
+    // Print result
+    printf("%d %d", even_sum, odd_sum);
+
+    return 0;
+}
