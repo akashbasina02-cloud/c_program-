@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int N, M;
+
+    // Read number of rows and columns
+    scanf("%d %d", &N, &M);
+
+    int even_sum = 0;   // To store sum of even numbers
+    int odd_sum = 0;    // To store sum of odd numbers
+    int num;            // Variable to store each matrix element
+
+    // Loop through rows
+    for(int i = 0; i < N; i++) {
+
+        // Loop through columns
+        for(int j = 0; j < M; j++) {
+
+            // Read each element
+            scanf("%d", &num);
+
+            // Check if number is even
+            if(num % 2 == 0) {
+                even_sum += num;   // Add to even sum
+            }
+            else {
+                odd_sum += num;    // Add to odd sum
+            }
+        }
+    }
+
+    // Print even sum and odd sum
+    printf("%d %d", even_sum, odd_sum);
+
+    return 0;   // End of program
+}
