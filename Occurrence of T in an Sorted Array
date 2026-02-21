@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+// Function to find first occurrence of X
+int findFirst(int arr[], int N, int X) {
+    int low = 0, high = N - 1;
+    int result = -1;   // Store index if found
+
+    while(low <= high) {
+        int mid = (low + high) / 2;
+
+        if(arr[mid] == X) {
+            result = mid;      // Store position
+            high = mid - 1;    // Move left to find earlier occurrence
+        }
+        else if(arr[mid] < X) {
+            low = mid + 1;     // Search right side
+        }
+        else {
+            high = mid - 1;    // Search left side
+        }
+    }
+    return result;
+}
+
+// Function to find last occurrence of X
+int findLast(int arr[], int N, int X) {
+    int low = 0, high = N - 1;
+    int result = -1;   // Store index if found
+
+    while(low <= high) {
+        int mid = (low + high) / 2;
+
+        if(arr[mid] == X) {
+            result = mid;      // Store position
+            low = mid + 1;     // Move right to find later occurrence
+        }
+        else if(arr[mid] < X) {
+            low = mid + 1;     // Search right side
+        }
+        else {
+            high = mid - 1;    // Search left side
+        }
+    }
+    return result;
+}
+
+int main() {
+    int N, X;
+
+    // Read size and target value
+    scanf("%d %d", &N, &X);
+
+    int arr[N];
+
+    // Read array elements
+    for(int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Find first occurrence
+    int first = findFirst(arr, N, X);
+
+    // If not found, print 0
+    if(first == -1) {
+        printf("0\n");
+        return 0;
+    }
+
+    // Find last occurrence
+    int last = findLast(arr, N, X);
+
+    // Total occurrences
+    printf("%d\n", last - first + 1);
+
+    return 0;
+}
