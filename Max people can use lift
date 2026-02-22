@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+
+    int Maxp, Maxw;
+    scanf("%d %d", &Maxp, &Maxw);
+
+    int N;
+    scanf("%d", &N);
+
+    int weight;
+    int count = 0;          // Number of people inside lift
+    int totalWeight = 0;    // Current total weight
+
+    for(int i = 0; i < N; i++) {
+
+        scanf("%d", &weight);
+
+        // Check if adding this person exceeds limits
+        if(count + 1 <= Maxp && totalWeight + weight <= Maxw) {
+            count++;                    // Add person
+            totalWeight += weight;      // Update total weight
+        }
+        else {
+            break;  // Stop if any condition fails
+        }
+    }
+
+    printf("%d", count);
+
+    return 0;
+}
