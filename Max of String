@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+
+    char str[100];   // String array
+    scanf("%s", str);   // Read string
+
+    char max = str[0];  // Assume first character is maximum
+
+    // Loop through string
+    for(int i = 1; str[i] != '\0'; i++) {
+        
+        // Compare ASCII values
+        if(str[i] > max) {
+            max = str[i];   // Update maximum
+        }
+    }
+
+    // Print maximum valued character
+    printf("%c", max);
+
+    return 0;
+}
