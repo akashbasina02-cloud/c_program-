@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+
+    char str[105];   // String array
+    scanf("%s", str);   // Read input string
+
+    // Loop through each character
+    for(int i = 0; str[i] != '\0'; i++) {
+
+        // Check if character is uppercase
+        if(str[i] >= 'A' && str[i] <= 'Z') {
+            
+            // Convert to lowercase
+            str[i] = str[i] + 32;
+        }
+    }
+
+    // Print result
+    printf("%s", str);
+
+    return 0;
+}
