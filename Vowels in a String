@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[10000];
+    char ch;
+    int i, found = 0;
+
+    fgets(s, sizeof(s), stdin);
+    scanf(" %c", &ch);
+
+    int len = strlen(s);
+
+    // Remove newline if present
+    if (s[len - 1] == '\n') {
+        s[len - 1] = '\0';
+        len--;
+    }
+
+    for (i = 0; i < len; i++) {
+        if (s[i] == ch) {
+            printf("True\n");
+            printf("%d", i);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("False");
+    }
+
+    return 0;
+}
