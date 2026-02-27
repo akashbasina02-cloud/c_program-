@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    char S[11];   // 10 characters + 1 for null character
+
+    scanf("%s", S);
+
+    printf("%c", S[6]);
+
+    return 0;
+}
