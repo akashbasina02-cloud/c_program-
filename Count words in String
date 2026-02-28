@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    char str[1000];   // Declare a string to store input
+    int count = 0;    // Variable to store word count
+
+    // Read full line including spaces
+    fgets(str, sizeof(str), stdin);
+
+    // Traverse the string
+    for(int i = 0; str[i] != '\0'; i++) {
+
+        // If current character is space
+        // and next character is not space or newline
+        // then it indicates a new word
+        if(str[i] == ' ' && str[i+1] != ' ' && str[i+1] != '\n') {
+            count++;
+        }
+    }
+
+    // If string is not empty, add 1 for first word
+    if(strlen(str) > 1) {
+        count++;
+    }
+
+    // Print total word count
+    printf("%d", count);
+
+    return 0;
+}
