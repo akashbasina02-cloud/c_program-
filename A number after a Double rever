@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+int reverse(int num) {
+    int reversed = 0;
+    while (num > 0) {
+        int digit = num % 10;
+        reversed = reversed * 10 + digit;
+        num = num / 10;
+    }
+    printf("reversed = %d\n", reversed);
+    return reversed;
+}
+
+bool isSameAfterReversals(int num) {
+    int rev1 = reverse(num);
+    int rev2 = reverse(rev1);
+    return rev2 == num;
+}
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (isSameAfterReversals(num))
+        printf("%d is same after double reversal.\n", num);
+    else
+        printf("%d is NOT same after double reversal.\n", num);
+
+    return 0;
+}
