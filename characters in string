@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    char str[10000];   // Declare character array (string)
+
+    // Read full line input including spaces
+    fgets(str, sizeof(str), stdin);
+
+    // Remove newline character added by fgets
+    str[strcspn(str, "\n")] = '\0';
+
+    // Print length of string using strlen()
+    printf("%lu", strlen(str));
+
+    return 0;   // Return 0 means program executed successfully
+}
