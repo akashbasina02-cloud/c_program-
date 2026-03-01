@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int N; // Total number of votes
+    char votes[105]; // Binary string for votes (max N = 100)
+
+    // Read number of votes
+    scanf("%d", &N);
+
+    // Read binary string (votes)
+    scanf("%s", votes);
+
+    int count1 = 0; // Count of votes in favor ('1')
+    int count0 = 0; // Count of votes against ('0')
+
+    // Loop through the string to count '1's and '0's
+    for(int i = 0; i < N; i++) {
+        if(votes[i] == '1') {
+            count1++; // Increment for favor
+        } else if(votes[i] == '0') {
+            count0++; // Increment for against
+        }
+    }
+
+    // Check if votes in favor are strictly greater
+    if(count1 > count0) {
+        printf("gogi_to_the_moon\n");
+    } else {
+        printf("kiddo\n");
+    }
+
+    return 0;
+}
