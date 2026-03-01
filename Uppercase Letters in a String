@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    char str[10005]; // Declare a string array (max length 10^4 + 1)
+    int count = 0;   // Initialize counter for uppercase letters
+
+    // Read the input line including spaces
+    fgets(str, sizeof(str), stdin);
+
+    // Loop through each character in the string
+    for(int i = 0; str[i] != '\0'; i++) {
+        // Check if character is uppercase (A-Z)
+        if(str[i] >= 'A' && str[i] <= 'Z') {
+            count++; // Increment counter if uppercase
+        }
+    }
+
+    // Print the total count of uppercase letters
+    printf("%d\n", count);
+
+    return 0; // End of program
+}
