@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int t;
+    scanf("%d", &t);
+    while(t--)
+    {
+        int N;
+        // Accept 1 integer as input.
+        scanf("%d", &N);
+        //Check if N is less than or equal to 100
+        if (N<=100)
+        {
+            printf("Good\n");
+        }
+        //2nd condition in the problem
+        else if (N>100 && N<=200)
+        {
+            printf("Better\n");
+        }
+        //3rd condition in the problem
+        else
+        {
+            printf("Best\n");
+        }
+    }
+    return 0;
+}
