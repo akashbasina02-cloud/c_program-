@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);  // Number of test cases
+
+    while(t--) {
+        int N;
+        scanf("%d", &N);  // Input for each test case
+
+        // Check divisibility by 3
+        if (N % 3 == 0)
+            printf("Divisible by 3\n");
+        else
+            printf("Not divisible by 3\n");
+
+        // Check odd or even
+        if (N % 2 != 0)
+            printf("Odd\n");
+        else
+            printf("Even\n");
+    }
+
+    return 0;
+}
