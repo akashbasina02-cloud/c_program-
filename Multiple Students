@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+// structure to store student details
+struct Student {
+    int roll;
+    char name[50];
+    float marks;
+};
+
+int main() {
+    int n;
+
+    // read number of students
+    scanf("%d", &n);
+
+    // array of structures
+    struct Student students[n];
+
+    // read student details
+    for(int i = 0; i < n; i++){
+        scanf("%d %s %f", &students[i].roll, students[i].name, &students[i].marks);
+    }
+
+    // print student details
+    for(int i = 0; i < n; i++){
+        printf("RollNumber: %d\n", students[i].roll);
+        printf("Name: %s\n", students[i].name);
+        printf("Marks: %.2f\n", students[i].marks);
+    }
+
+    return 0;
+}
