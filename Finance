@@ -1,0 +1,3 @@
+print((p * t * r) / 100)       # simple interest
+print(p * (1 + r/100) ** t)    # compound amount
+print(p * ((1 + r/100)**t - 1))# compound interest
