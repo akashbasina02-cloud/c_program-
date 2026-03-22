@@ -1,0 +1,6 @@
+import math
+print(math.sin(x))             # sine
+print(math.cos(x))             # cosine
+print(math.tan(x))             # tangent
+print(math.radians(d))         # degree → radian
+print(math.degrees(r))         # radian → degree
