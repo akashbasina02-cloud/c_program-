@@ -1,0 +1,4 @@
+print(h * 3600 + m * 60 + s)  # to seconds
+print(sec // 3600)            # hours
+print((sec % 3600) // 60)     # minutes
+print(sec % 60)               # seconds
