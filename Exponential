@@ -1,0 +1,4 @@
+import math
+print(math.log(n))             # natural log
+print(math.log10(n))           # log base 10
+print(math.exp(x))             # e^x
