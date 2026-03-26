@@ -1,2 +1,14 @@
 # c_program-
-C programming practice programs from basics to advanced
+# Calculator Project
+
+This is a **menu-driven calculator** implemented in C.  
+
+## Features
+- Addition, Subtraction, Multiplication, Division
+- Handles division by zero
+- Simple text-based menu
+
+## Usage
+1. Compile the program:
+```bash
+gcc calculator.c -o calculator
