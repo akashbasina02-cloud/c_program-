@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+// Define structure for student
+struct Student {
+    int roll;        // student roll number
+    char name[50];   // student name
+    float marks;     // student marks
+};
+
+int main() {
+    int n;
+
+    // Read number of students
+    scanf("%d", &n);
+
+    // Create array of structures
+    struct Student students[n];
+
+    // Read details of all students
+    for(int i = 0; i < n; i++) {
+        scanf("%d %s %f", &students[i].roll, students[i].name, &students[i].marks);
+    }
+
+    int maxindex = 0; // assume first student has highest marks
+
+    // Find student with highest marks
+    for(int i = 1; i < n; i++) {
+        if(students[i].marks > students[maxindex].marks) {
+            maxindex = i;  // update index if higher marks found
+        }
+    }
+
+    // Print student with highest marks
+    printf("Name: %s\n", students[maxindex].name);
+    printf("Marks: %.2f\n", students[maxindex].marks);
+
+    return 0; // end program
+}
