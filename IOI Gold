@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int N, G;
+
+    // Read Chef's score and the gold cutoff
+    scanf("%d %d", &N, &G);
+
+    // Check if Chef's score is greater than or equal to the cutoff
+    if (N >= G) {
+        // Chef gets a gold medal
+        printf("Yes\n");
+    } else {
+        // Chef does not get a gold medal
+        printf("No\n");
+    }
+
+    return 0;
+}
