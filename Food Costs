@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y;
+
+    // Read the cost of mess food and restaurant food
+    scanf("%d %d", &X, &Y);
+
+    // There are 6 mess days and 1 restaurant day (Sunday)
+    int total = (6 * X) + Y;
+
+    // Print the total weekly food cost
+    printf("%d\n", total);
+
+    return 0;
+}
