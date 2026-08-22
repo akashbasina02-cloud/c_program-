@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+
+    // Read number of cakes
+    scanf("%d", &N);
+
+    // Apply discount if N >= 5
+    if (N >= 5) {
+        printf("%d\n", N * 85);
+    } else {
+        printf("%d\n", N * 100);
+    }
+
+    return 0;
+}
