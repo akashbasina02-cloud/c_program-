@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int L, R;
+
+    // Read number of left and right shoes
+    scanf("%d %d", &L, &R);
+
+    // The difference is the number of missing shoes
+    printf("%d\n", abs(L - R));
+
+    return 0;
+}
