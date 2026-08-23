@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    // Declare variable for number of children
+    int N;
+
+    // Read the number of children
+    scanf("%d", &N);
+
+    // Calculate the cost of toys
+    int toy_cost = N * 200;
+
+    // Cost of one television
+    int tv_cost = 1000;
+
+    // Print the minimum cost
+    if (toy_cost < tv_cost)
+        printf("%d\n", toy_cost);
+    else
+        printf("%d\n", tv_cost);
+
+    return 0;
+}
