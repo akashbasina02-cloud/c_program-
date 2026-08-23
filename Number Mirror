@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    // Declare a variable to store the number
+    int N;
+
+    // Read the number
+    scanf("%d", &N);
+
+    // Print the same number
+    printf("%d\n", N);
+
+    return 0;
+}
