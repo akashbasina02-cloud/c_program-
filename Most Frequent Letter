@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100001];
+    int count[26] = {0};
+
+    // Read the complete string including spaces
+    fgets(s, sizeof(s), stdin);
+
+    // Check each character
+    for (int i = 0; s[i] != '\0'; i++) {
+
+        // Check if the character is an alphabet
+        if (isalpha(s[i])) {
+
+            // Convert uppercase to lowercase
+            char ch = tolower(s[i]);
+
+            // Count the letter
+            count[ch - 'a']++;
+        }
+    }
+
+    // Find the letter with maximum frequency
+    int max = 0;
+    int answer = 0;
+
+    for (int i = 0; i < 26; i++) {
+
+        // Because we check from a to z,
+        // the first maximum is alphabetically smallest
+        if (count[i] > max) {
+            max = count[i];
+            answer = i;
+        }
+    }
+
+    // Convert index back to a letter
+    printf("%c\n", answer + 'a');
+
+    return 0;
+}
