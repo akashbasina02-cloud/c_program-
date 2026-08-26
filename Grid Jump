@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int A, B, P, Q, R;
+        scanf("%d %d %d %d %d", &A, &B, &P, &Q, &R);
+
+        int ans = 1000000000;
+
+        // Try every possible number of diagonal moves
+        for (int k = 0; k <= (A < B ? A : B); k++) {
+
+            // Remaining distance
+            int right = A - k;
+            int up = B - k;
+
+            // Number of right moves
+            int rightMoves = (right + 1) / 2;
+
+            // Number of up moves
+            int upMoves = (up + 1) / 2;
+
+            // Calculate total cost
+            int cost = k * R
+                     + rightMoves * P
+                     + upMoves * Q;
+
+            // Keep minimum cost
+            if (cost < ans) {
+                ans = cost;
+            }
+        }
+
+        printf("%d\n", ans);
+    }
+
+    return 0;
+}
