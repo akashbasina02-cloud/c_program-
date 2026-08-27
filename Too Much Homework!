@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y;
+
+    // Read questions already completed and
+    // number of questions in each worksheet
+    scanf("%d %d", &X, &Y);
+
+    // Chef can complete at most 10 worksheets
+    int total = X + (10 * Y);
+
+    // Check if Chef can reach at least 100 questions
+    if (total >= 100) {
+        printf("YES\n");
+    } else {
+        printf("NO\n");
+    }
+
+    return 0;
+}
