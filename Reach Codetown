@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+
+// Function to check whether a character is a vowel
+int isVowel(char ch)
+{
+    return ch == 'A' || ch == 'E' ||
+           ch == 'I' || ch == 'O' ||
+           ch == 'U';
+}
+
+int main()
+{
+    int T;
+    scanf("%d", &T);
+
+    char target[] = "CODETOWN";
+
+    while (T--)
+    {
+        char S[9];
+        scanf("%s", S);
+
+        int possible = 1;
+
+        // Compare vowel/consonant type at every position
+        for (int i = 0; i < 8; i++)
+        {
+            // If one is vowel and the other is consonant,
+            // transformation is impossible
+            if (isVowel(S[i]) != isVowel(target[i]))
+            {
+                possible = 0;
+                break;
+            }
+        }
+
+        if (possible)
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+
+    return 0;
+}
