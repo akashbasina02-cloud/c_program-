@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+// Function to find GCD
+long long gcd(long long a, long long b) {
+    while (b != 0) {
+        long long temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    return a;
+}
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        long long X, Y;
+        scanf("%lld %lld", &X, &Y);
+
+        // Already have common divisor greater than 1
+        if (gcd(X, Y) > 1) {
+            printf("0\n");
+        }
+
+        // Increase either X or Y once
+        else if (gcd(X + 1, Y) > 1 ||
+                 gcd(X, Y + 1) > 1) {
+            printf("1\n");
+        }
+
+        // Increase both numbers
+        else {
+            printf("2\n");
+        }
+    }
+
+    return 0;
+}
