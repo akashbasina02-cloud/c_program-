@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int N;
+        scanf("%d", &N);
+
+        // First character is 0
+        printf("0");
+
+        // Print N-2 ones in the middle
+        for (int i = 0; i < N - 2; i++) {
+            printf("1");
+        }
+
+        // Last character is 0
+        printf("0\n");
+    }
+
+    return 0;
+}
