@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        long long N, M;
+        scanf("%lld %lld", &N, &M);
+
+        // Minimum possible value = N
+        // Maximum possible value = 3*N
+        // Difference M-N must be even
+        if (M >= N && M <= 3 * N && (M - N) % 2 == 0) {
+            printf("YES\n");
+        } else {
+            printf("NO\n");
+        }
+    }
+
+    return 0;
+}
