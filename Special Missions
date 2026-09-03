@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int N, C;
+        scanf("%d %d", &N, &C);
+
+        int A[105];
+
+        // Read mission rewards
+        for (int i = 0; i < N; i++) {
+            scanf("%d", &A[i]);
+        }
+
+        char S[105];
+        scanf("%s", S);
+
+        int normal = 0;
+        int special = 0;
+
+        // Separate normal and special mission rewards
+        for (int i = 0; i < N; i++) {
+            if (S[i] == '0') {
+                normal += A[i];
+            } else {
+                special += A[i];
+            }
+        }
+
+        // Without paying wizard
+        int answer = normal;
+
+        // We can unlock special missions only if
+        // we already have at least C coins
+        if (normal >= C) {
+            int unlocked = normal - C + special;
+
+            // Choose whichever gives more coins
+            if (unlocked > answer) {
+                answer = unlocked;
+            }
+        }
+
+        printf("%d\n", answer);
+    }
+
+    return 0;
+}
