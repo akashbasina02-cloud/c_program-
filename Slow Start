@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+
+    // Read number of test cases
+    scanf("%d", &T);
+
+    while (T--) {
+        int X, H;
+
+        // Read attack X and opponent health H
+        scanf("%d %d", &X, &H);
+
+        // Damage for first 5 turns is half of X
+        int half_damage = X / 2;
+
+        // Total damage in first 5 turns
+        int first_five_damage = 5 * half_damage;
+
+        int turns;
+
+        if (H <= first_five_damage) {
+            // Enemy is defeated within first 5 turns
+            // Ceiling division
+            turns = (H + half_damage - 1) / half_damage;
+        } else {
+            // Remove damage done in first 5 turns
+            H = H - first_five_damage;
+
+            // Calculate extra turns using full attack X
+            int extra_turns = (H + X - 1) / X;
+
+            turns = 5 + extra_turns;
+        }
+
+        // Print answer
+        printf("%d\n", turns);
+    }
+
+    return 0;
+}
