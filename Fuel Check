@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y;
+
+    // Read fuel amount and fuel efficiency
+    scanf("%d %d", &X, &Y);
+
+    // Check if total possible distance is at least 100 km
+    if (X * Y >= 100) {
+        printf("Yes\n");
+    } else {
+        printf("No\n");
+    }
+
+    return 0;
+}
