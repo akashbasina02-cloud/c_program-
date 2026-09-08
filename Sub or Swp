@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        long long X, Y;
+        scanf("%lld %lld", &X, &Y);
+
+        // Find GCD using Euclidean Algorithm
+        while (Y != 0) {
+            long long remainder = X % Y;
+
+            // Move Y to X
+            X = Y;
+
+            // Move remainder to Y
+            Y = remainder;
+        }
+
+        // X contains the GCD
+        printf("%lld\n", X);
+    }
+
+    return 0;
+}
