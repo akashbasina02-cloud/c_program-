@@ -1,0 +1,32 @@
+
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int N;
+        scanf("%d", &N);
+
+        int ones = 0;
+        int x;
+
+        // Read B and count the number of 1s
+        for (int i = 0; i < N; i++) {
+            scanf("%d", &x);
+
+            if (x == 1) {
+                ones++;
+            }
+        }
+
+        // Number of 1s must be even
+        if (ones % 2 == 0)
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+
+    return 0;
+}
