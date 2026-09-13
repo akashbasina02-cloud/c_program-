@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int N, X;
+        scanf("%d %d", &N, &X);
+
+        // N is even -> any X can be obtained
+        // N is odd -> X must be odd
+        if (N % 2 == 0 || X % 2 == 1) {
+            printf("YES\n");
+        } else {
+            printf("NO\n");
+        }
+    }
+
+    return 0;
+}
