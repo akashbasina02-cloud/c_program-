@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int XA, XB, XC;
+        scanf("%d %d %d", &XA, &XB, &XC);
+
+        // Check if Party A has more than 50 votes
+        if (XA > 50) {
+            printf("A\n");
+        }
+
+        // Check if Party B has more than 50 votes
+        else if (XB > 50) {
+            printf("B\n");
+        }
+
+        // Check if Party C has more than 50 votes
+        else if (XC > 50) {
+            printf("C\n");
+        }
+
+        // No party has a clear majority
+        else {
+            printf("NOTA\n");
+        }
+    }
+
+    return 0;
+}
