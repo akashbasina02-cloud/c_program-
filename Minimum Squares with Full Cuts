@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int minSquares(int n, int m) {
+    int count = 0;  // Stores the total number of squares
+
+    // Continue until no paper remains
+    while (n > 0 && m > 0) {
+
+        if (n > m) {
+            // Count squares of size m x m
+            count += n / m;
+
+            // Update n with the remaining length
+            n = n % m;
+        } else {
+            // Count squares of size n x n
+            count += m / n;
+
+            // Update m with the remaining length
+            m = m % n;
+        }
+    }
+
+    return count;  // Return the total number of squares
+}
+
+int main() {
+    int n = 4, m = 5;
+
+    printf("%d\n", minSquares(n, m));
+
+    return 0;
+}
