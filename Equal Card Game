@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);  // Read number of test cases
+
+    while (T--) {
+        int K;
+        scanf("%d", &K);  // Read number of people
+
+        // Discard the remaining cards that cannot be divided equally
+        printf("%d\n", 52 % K);
+    }
+
+    return 0;
+}
