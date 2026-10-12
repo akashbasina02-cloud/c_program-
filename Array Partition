@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Compare function for sorting in ascending order
+int compare(const void *a, const void *b) {
+    int x = *(const int *)a;
+    int y = *(const int *)b;
+
+    // Avoid subtraction overflow
+    return (x > y) - (x < y);
+}
+
+int arrayPairSum(int* nums, int numsSize) {
+    // Sort the array in ascending order
+    qsort(nums, numsSize, sizeof(int), compare);
+
+    int total = 0;  // Stores the sum of minimum values
+
+    // Visit every second element
+    for (int i = 0; i < numsSize; i += 2) {
+        total += nums[i];  // Add the smaller value of each pair
+    }
+
+    return total;  // Return the maximum possible sum
+}
+
+int main() {
+    int nums[] = {1, 4, 3, 2};
+    int size = sizeof(nums) / sizeof(nums[0]);
+
+    printf("%d\n", arrayPairSum(nums, size));
+
+    return 0;
+}
