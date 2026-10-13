@@ -1,0 +1,37 @@
+
+#include <stdio.h>
+
+int main() {
+    int t;
+
+    // Read the number of test cases
+    scanf("%d", &t);
+
+    while (t--) {
+        int n, y;
+
+        // Read array size and target OR value
+        scanf("%d %d", &n, &y);
+
+        int result = 0;
+
+        // Read each element and calculate the OR
+        for (int i = 0; i < n; i++) {
+            int num;
+            scanf("%d", &num);
+
+            result = result | num;
+        }
+
+        // Check whether result has bits outside Y
+        if ((result | y) != y) {
+            printf("-1\n");
+        } else {
+            // Find the missing bits needed to reach Y
+            int x = y ^ result;
+            printf("%d\n", x);
+        }
+    }
+
+    return 0;
+}
