@@ -1,0 +1,42 @@
+
+#include <stdlib.h>
+
+// Compare two numbers by their absolute values
+int compare(const void *a, const void *b) {
+    int x = *(const int *)a;
+    int y = *(const int *)b;
+
+    // Avoid subtraction overflow and sort by absolute value
+    int ax = abs(x);
+    int ay = abs(y);
+
+    if (ax < ay) return -1;
+    if (ax > ay) return 1;
+    return 0;
+}
+
+long long maxAlternatingSum(int* nums, int numsSize) {
+
+    // Sort numbers by absolute value, smallest to largest
+    qsort(nums, numsSize, sizeof(int), compare);
+
+    long long total = 0;
+
+    // Number of positions with a positive sign
+    int positiveCount = (numsSize + 1) / 2;
+
+    // The largest squares are added
+    for (int i = numsSize - positiveCount; i < numsSize; i++) {
+        long long value = nums[i];
+        total += value * value;
+    }
+
+    // The smallest squares are subtracted
+    for (int i = 0; i < numsSize - positiveCount; i++) {
+        long long value = nums[i];
+        total -= value * value;
+    }
+
+    // Return the maximum alternating score
+    return total;
+}
