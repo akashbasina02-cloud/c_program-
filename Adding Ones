@@ -1,0 +1,49 @@
+
+#include <stdio.h>
+
+void update(int n, int k, int updates[], int arr[]) {
+
+    // Initialize the array with zeros
+    for (int i = 0; i < n; i++) {
+        arr[i] = 0;
+    }
+
+    // Count updates at their starting positions
+    for (int i = 0; i < k; i++) {
+        // Convert the 1-based index to 0-based index
+        arr[updates[i] - 1]++;
+    }
+
+    // Calculate cumulative sums
+    // Each update affects its starting position and all later positions
+    for (int i = 1; i < n; i++) {
+        arr[i] += arr[i - 1];
+    }
+}
+
+int main() {
+    int n, k;
+
+    // Read array size and number of updates
+    scanf("%d %d", &n, &k);
+
+    int updates[k];
+    int arr[n];
+
+    // Read the updates
+    for (int i = 0; i < k; i++) {
+        scanf("%d", &updates[i]);
+    }
+
+    // Apply all updates
+    update(n, k, updates, arr);
+
+    // Print the final array
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
