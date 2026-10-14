@@ -1,0 +1,34 @@
+
+#include <stdio.h>
+#include <string.h>
+
+char* findRollOut(char* s, int roll[], int rollSize) {
+    int n = strlen(s);
+    int diff[100001] = {0};
+
+    // Mark the start and end of each roll operation
+    for (int i = 0; i < rollSize; i++) {
+        diff[0]++;
+        diff[roll[i]]--;
+    }
+
+    int shift = 0;
+
+    // Apply the total shifts to each character
+    for (int i = 0; i < n; i++) {
+        shift = (shift + diff[i]) % 26;
+
+        s[i] = (s[i] - 'a' + shift) % 26 + 'a';
+    }
+
+    return s;
+}
+
+int main() {
+    char s[100001] = "bca";
+    int roll[] = {1, 2, 3};
+
+    printf("%s\n", findRollOut(s, roll, 3));
+
+    return 0;
+}
