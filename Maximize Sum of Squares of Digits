@@ -1,0 +1,38 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* maxSumOfSquares(int num, int sum) {
+    // Check whether the required digit sum is possible
+    if (sum > 9 * num) {
+        char* empty = malloc(1);
+        empty[0] = '\0';
+        return empty;
+    }
+
+    char* result = malloc(num + 1);
+
+    // Place the largest possible digit first
+    for (int i = 0; i < num; i++) {
+        int digit = (sum >= 9) ? 9 : sum;
+
+        result[i] = '0' + digit;
+        sum -= digit;
+    }
+
+    result[num] = '\0';
+
+    return result;
+}
+
+int main() {
+    int num = 2, sum = 17;
+
+    char* result = maxSumOfSquares(num, sum);
+
+    printf("%s\n", result);
+
+    free(result);
+    return 0;
+}
