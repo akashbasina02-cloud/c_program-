@@ -1,0 +1,22 @@
+int sumCounts(int* nums, int numsSize) {
+    int total = 0;
+
+    // Choose the starting index
+    for (int i = 0; i < numsSize; i++) {
+        int seen[101] = {0};
+        int distinct = 0;
+
+        // Extend the subarray to the right
+        for (int j = i; j < numsSize; j++) {
+            if (seen[nums[j]] == 0) {
+                seen[nums[j]] = 1;
+                distinct++;
+            }
+
+            // Add the square of the distinct count
+            total += distinct * distinct;
+        }
+    }
+
+    return total;
+}
